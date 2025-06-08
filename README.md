@@ -3,8 +3,8 @@
 A modular monolith SaaS starter kit built with **React**, **Vite**, **TypeScript**, **Supabase**, and **Clerk**.  
 Built to scale from idea to production with modern developer experience in mind.
 
-[![CI](https://img.shields.io/github/actions/workflow/status/your-username/saas-starter-kit/ci.yml?branch=main&style=flat-square)](https://github.com/your-username/saas-starter-kit/actions)
-[![License](https://img.shields.io/github/license/your-username/saas-starter-kit?style=flat-square)](LICENSE)
+[![CI](https://img.shields.io/github/actions/workflow/status/pmndifon/saas-starter-kit/ci.yml?branch=main&style=flat-square)](https://github.com/your-username/saas-starter-kit/actions)
+[![License](https://img.shields.io/github/license/pmndifon/saas-starter-kit?style=flat-square)](LICENSE)
 
 ---
 
