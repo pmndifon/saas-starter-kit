@@ -1,23 +1,74 @@
 # 🚀 SaaS Starter Kit
 
-This is a modular monolith starter scaffold built for use with:
-- [Lovable.dev](https://lovable.dev)
-- [Bolt.new](https://bolt.new)
-- [Cursor IDE](https://cursor.sh)
-- [Supabase](https://supabase.com)
-- [Clerk](https://clerk.dev)
+A modular monolith SaaS starter kit built with **React**, **Vite**, **TypeScript**, **Supabase**, and **Clerk**.  
+Built to scale from idea to production with modern developer experience in mind.
 
-It follows modern frontend-first principles using React, Vite, Tailwind CSS, and TypeScript, and is backed by Supabase and Clerk for backend and authentication.
+[![CI](https://img.shields.io/github/actions/workflow/status/your-username/saas-starter-kit/ci.yml?branch=main&style=flat-square)](https://github.com/your-username/saas-starter-kit/actions)
+[![License](https://img.shields.io/github/license/your-username/saas-starter-kit?style=flat-square)](LICENSE)
 
 ---
 
-# 🧱 SaaS Starter Kit – Scaffold Documentation
+## ✨ Features
 
-This document describes the file and folder structure of the SaaS Starter Kit. It is built to support a modular monolith architecture, compatible with Lovable.dev, Bolt.new, Cursor IDE, Supabase, and Clerk.
+- 🧩 **Modular Architecture** — Domain-driven structure with separation of concerns
+- 🛠 **Developer Ready** — Preconfigured ESLint, Prettier, Husky, and lint-staged
+- 🧪 **Testing Setup** — Includes Jest, MSW, and Cypress
+- 🔐 **Authentication Ready** — Clerk integrated (login, session, JWT)
+- 🔗 **API Ready** — Supabase JS + REST integration scaffolded
+- 🚢 **Deployment-Ready** — Includes Docker and GitHub Actions CI
+- 🌍 **Lovable.dev & Codespaces Compatible** — Works in cloud IDEs
 
 ---
 
-## 📁 Folder Structure Overview
+## 📦 Stack Overview
+
+| Frontend     | Backend         | Tooling             |
+|--------------|-----------------|---------------------|
+| React + Vite | Supabase + Clerk| Jest, ESLint, Docker |
+
+---
+
+## 🚀 Getting Started
+
+Use this template:
+
+```bash
+npx degit your-username/saas-starter-kit my-saas-app
+cd my-saas-app
+npm install
+npm run dev
+```
+
+> Replace `your-username` with your GitHub handle
+
+---
+
+## 📂 Directory Structure
+
+```
+src/
+├── application/       # Business logic
+├── components/        # Reusable components
+├── config/            # Environment & runtime configs
+├── context/           # Global state providers (e.g. Tenant)
+├── domains/           # Domain models/entities
+├── hooks/             # Custom hooks
+├── infrastructure/    # External service interfaces
+├── lib/               # Utilities (e.g. logger)
+├── pages/             # Route-based views
+├── providers/         # Context providers
+├── shared/            # Common types, validators, helpers
+│   ├── types/
+│   └── validators/
+tests/
+├── unit/
+├── integration/
+└── e2e/
+```
+
+---
+
+## 🧱 Full Scaffold & Folder Breakdown
 
 ```plaintext
 project-root/
@@ -45,36 +96,15 @@ project-root/
 ├── Various config files (tsconfig.json, jest.config.js, etc.)
 ```
 
----
+### Folder Purposes
 
-## 🧩 Detailed Folder Roles
-
-### `index.html`
+#### `index.html`
 A fallback homepage used by browser-based IDEs. Not needed in production frameworks.
 
-### `public/`
+#### `public/`
 Static assets like images, logos, and icons. Automatically served by Vite.
 
----
-
-### `src/` – Source Code
-
-| Folder | Purpose |
-|--------|---------|
-| `application/` | High-level use cases and orchestration logic (e.g., invite flow) |
-| `components/` | Reusable presentational components (UI widgets) |
-| `context/` | Global React context (e.g., TenantProvider, Theme) |
-| `hooks/` | Custom React hooks for logic reuse |
-| `pages/` | Page-level React components or routes |
-| `providers/` | Wrapper providers (e.g., for Clerk, QueryClient) |
-| `domains/` | Domain-specific business logic (e.g., Billing, Tenant) |
-| `config/` | Global constants and `env.ts` for environment settings |
-| `lib/` | Shared utilities (e.g., logger, fetch wrapper) |
-| `shared/` | Cross-cutting concerns like types and validators |
-
----
-
-### `src/backend/` – Backend Structure (No runtime logic, just scaffolding)
+#### `src/backend/` – Backend Structure (No runtime logic, just scaffolding)
 
 | Folder | Purpose |
 |--------|---------|
@@ -83,8 +113,6 @@ Static assets like images, logos, and icons. Automatically served by Vite.
 | `services/` | Backend-focused business logic (e.g., billing, workflows) |
 | `repositories/` | Data access logic (e.g., call Supabase) |
 | `types/` | Internal backend-only TypeScript types |
-
-This structure keeps business logic modular and portable between Supabase Edge Functions, API routes, or other service environments.
 
 ---
 
@@ -105,8 +133,6 @@ GitHub Actions config for continuous integration (testing, linting, etc.).
 ### `.storybook/`
 Optional – Storybook setup for developing and previewing components in isolation.
 
----
-
 ### `.env`, `.env.test`
 Environment variable files for local dev and testing.
 
@@ -124,6 +150,17 @@ Optional containers for local dev, CI pipelines, or deployment.
 
 ---
 
+## 🧪 Scripts
+
+```bash
+npm run dev          # Start local dev server
+npm run test         # Run unit tests
+npm run lint         # Lint the codebase
+npm run type-check   # Run TypeScript checks
+```
+
+---
+
 ## ✅ Principles Followed
 
 - **Modular Monolith**: Clean separation of domains, services, and UI layers
@@ -134,11 +171,6 @@ Optional containers for local dev, CI pipelines, or deployment.
 
 ---
 
-## 📎 Notes
+## 📄 License
 
-- You can implement backend logic inside `src/backend/` or via Supabase Edge Functions.
-- Supabase RLS (Row Level Security) is strongly recommended for multi-tenant security.
-- Clerk provides auth; Supabase provides DB, file storage, and optionally functions.
-
-
-
+[MIT](LICENSE) © Patrick Ndifon
